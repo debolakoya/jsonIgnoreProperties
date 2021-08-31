@@ -2,13 +2,18 @@
 A JSON serialization resolver to exclude properties when you don't want to decorate the properties with `[JsonIgnore]`
 
 Usage :  
-`var serializationResolver = new JsonIgnorePropertiesResolver(config.ExcludedFields());`
+```csharp
+var serializationResolver = new JsonIgnorePropertiesResolver(config.ExcludedFields());```
 
-`var serializationResolver = new JsonIgnorePropertiesResolver(new []{"Property1","Property2"});` 
+or
 
-`JsonConvert.SerializeObject(
+```csharp
+var serializationResolver = new JsonIgnorePropertiesResolver(new []{"Property1","Property2"});```
+
+```csharp
+JsonConvert.SerializeObject(
 	YourObject,
 	new JsonSerializerSettings() {
 		ContractResolver = serializationResolver 
 	};
-);`
+);```
